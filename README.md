@@ -18,13 +18,15 @@ An interactive, high-performance web showcase for **Diet Coke (Caffeine Free)** 
 
 ## 🚀 One-Click Vercel Deployment
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FAjitAuti-11%2FDiet-Coke)
+
 This project is pre-configured for **zero-config deployment on [Vercel](https://vercel.com/)**:
 
 ### Option 1: Import via Vercel Dashboard (Recommended)
-1. Go to [vercel.com/new](https://vercel.com/new).
-2. Select your GitHub repository: `AjitAuti-11/Diet-Coke`.
+1. Click the **Deploy with Vercel** button above, or go to [vercel.com/new](https://vercel.com/new).
+2. Import repository: `AjitAuti-11/Diet-Coke`.
 3. Keep default settings (Framework Preset: **Other** / Static).
-4. Click **Deploy**.
+4. Click **Deploy**. Vercel will automatically build and publish the site with Edge CDN caching enabled.
 
 ### Option 2: Deploy using Vercel CLI
 ```bash

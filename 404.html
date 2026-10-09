@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>404 — Page Not Found | Diet Coke Caffeine Free</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#b60020',
+            surface: '#fff9ed',
+            surfaceDark: '#1f1c0e'
+          },
+          fontFamily: {
+            syne: ['Syne', 'sans-serif'],
+            grotesk: ['Space Grotesk', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#fff9ed] text-[#1f1c0e] min-h-screen flex flex-col items-center justify-center p-6 selection:bg-[#b60020] selection:text-white font-['Space_Grotesk']">
+  <div class="max-w-md w-full text-center space-y-6">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e8bcb9]/30 border border-[#e8bcb9] text-[#930018] text-xs font-semibold uppercase tracking-wider">
+      <span>Zero Caffeine</span>
+      <span>•</span>
+      <span>Lost in the Bubbles</span>
+    </div>
+
+    <h1 class="font-['Syne'] font-extrabold text-7xl md:text-8xl text-[#b60020] tracking-tight">
+      404
+    </h1>
+
+    <div class="space-y-2">
+      <h2 class="font-['Syne'] text-2xl font-bold text-[#1f1c0e]">
+        This page lost its fizz.
+      </h2>
+      <p class="text-sm md:text-base text-[#5e3f3d] max-w-sm mx-auto leading-relaxed">
+        The link you followed doesn't exist or has moved. Return to the homepage to experience the crisp chill.
+      </p>
+    </div>
+
+    <div class="pt-2">
+      <a href="/" class="inline-flex items-center gap-2 bg-[#b60020] hover:bg-[#930018] text-white px-8 py-3.5 rounded-full font-bold text-sm tracking-wide shadow-lg shadow-[#b60020]/25 hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
+        <span>Back to the Chill</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <footer class="absolute bottom-6 text-xs text-[#936e6c]">
+    © 2026 The Coca-Cola Company. All rights reserved.
+  </footer>
+</body>
+</html>

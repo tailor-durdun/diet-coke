@@ -4,7 +4,9 @@
   "description": "Diet Coke Caffeine Free — Interactive Canvas Scroll Showcase",
   "main": "index.html",
   "scripts": {
-    "start": "npx serve ."
+    "build": "echo 'Static assets ready for deployment'",
+    "start": "npx serve .",
+    "dev": "npx serve ."
   },
   "keywords": [
     "diet-coke",
