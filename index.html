@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="web_standard" name="shell-type"/>
+  <title>Diet Coke — Caffeine Free</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#e8bcb9",
+            "surface-container-highest": "#eae2cb",
+            "surface-variant": "#eae2cb",
+            "error-container": "#ffdad6",
+            "outline": "#936e6c",
+            "on-tertiary-fixed": "#291800",
+            "on-primary-fixed-variant": "#930018",
+            "inverse-surface": "#343021",
+            "on-secondary-fixed": "#1c1b1b",
+            "secondary": "#5f5e5e",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#e5e2e1",
+            "error": "#ba1a1a",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#c8c6c5",
+            "surface-container-low": "#fbf3dc",
+            "surface": "#fff9ed",
+            "surface-tint": "#bf0022",
+            "on-surface-variant": "#5e3f3d",
+            "inverse-primary": "#ffb3af",
+            "primary": "#b60020",
+            "on-error-container": "#93000a",
+            "on-surface": "#1f1c0e",
+            "surface-bright": "#fff9ed",
+            "background": "#fff9ed",
+            "surface-dim": "#e1dac3",
+            "on-background": "#1f1c0e",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#474646",
+            "primary-fixed-dim": "#ffb3af",
+            "tertiary-fixed-dim": "#f2be71",
+            "on-tertiary-container": "#fff7f0",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdad7",
+            "surface-container": "#f6eed6",
+            "tertiary": "#78520d",
+            "on-secondary-container": "#656464",
+            "tertiary-container": "#946a26",
+            "primary-container": "#e4002b",
+            "on-tertiary": "#ffffff",
+            "inverse-on-surface": "#f9f0d9",
+            "tertiary-fixed": "#ffddb1",
+            "surface-container-high": "#f0e8d1",
+            "on-primary-container": "#fff6f5",
+            "secondary-fixed": "#e5e2e1",
+            "on-primary-fixed": "#410005",
+            "on-tertiary-fixed-variant": "#614000"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1.25rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "2rem",
+            "gutter": "1.5rem",
+            "margin": "4rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xl": "3.5rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-sm": [ "Syne" ],
+            "display-xl-mobile": [ "Syne" ],
+            "label-lg": [ "Space Grotesk" ],
+            "label-md": [ "Space Grotesk" ],
+            "body-sm": [ "Space Grotesk" ],
+            "headline-md": [ "Syne" ],
+            "label-sm": [ "Space Grotesk" ],
+            "body-md": [ "Space Grotesk" ],
+            "display-xl": [ "Syne" ],
+            "headline-lg": [ "Syne" ],
+            "body-lg": [ "Space Grotesk" ],
+            "headline-lg-mobile": [ "Syne" ]
+          },
+          "fontSize": {
+            "headline-sm": [ "20px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" } ],
+            "display-xl-mobile": [ "44px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" } ],
+            "label-lg": [ "14px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" } ],
+            "label-md": [ "12px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" } ],
+            "body-sm": [ "13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" } ],
+            "headline-md": [ "28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" } ],
+            "label-sm": [ "10px", { "lineHeight": "12px", "letterSpacing": "0.12em", "fontWeight": "700" } ],
+            "body-md": [ "15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" } ],
+            "display-xl": [ "80px", { "lineHeight": "84px", "letterSpacing": "-0.03em", "fontWeight": "800" } ],
+            "headline-lg": [ "48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" } ],
+            "body-lg": [ "18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" } ],
+            "headline-lg-mobile": [ "32px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" } ]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="loading bg-surface font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+
+  <!-- PRELOADER -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="loader-bar-bg">
+        <div id="loaderBar" class="loader-bar-fill"></div>
+      </div>
+      <div class="loader-status">
+        <span id="loaderPercent">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRANSPARENT NAVIGATION BAR -->
+  <header id="mainNav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-surface/20 backdrop-blur-md border-b border-outline-variant/10">
+    <div class="h-14 sm:h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-sm sm:gap-space-md">
+      <!-- Brand Logo -->
+      <a href="#scrollWrapper" class="flex items-center gap-2.5 sm:gap-3 flex-shrink-0 group">
+        <img alt="Diet Coke Logo" class="h-6 sm:h-7 w-auto object-contain transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR7xJJLesfChmnycnrRhB5nFFw7iwkz7U8GaBcsDkEnNFQRLkz9pjE8QtWBMR_AVX950ufdUKyBnV6ZPmGzFUYzxh-wwpaXvMRiZtFdd6qtfJXHh98Mo0hPSKu4-nyC_rBUFhCtn5r-TP8kr52LcFTeSvitN35Q8V6_SJ2BPhDIkh3yMI3PwbkQ0g4rHRMyIjdg4KpCSPEeh_z60CgPrYIPkXHR4IkEMRpamChA1-EiHb-R8HkyRGk"/>
+        <div class="flex flex-col">
+          <span class="font-headline-sm text-base sm:text-lg font-bold tracking-tight text-on-surface uppercase leading-none">Diet Coke</span>
+          <span class="font-label-sm text-[9px] sm:text-[10px] tracking-widest text-primary font-bold uppercase mt-0.5">Caffeine Free</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="hidden lg:flex items-center gap-1" id="navLinks">
+        <a href="#scrollWrapper" class="nav-item px-3 py-1 rounded-full font-label-md text-xs sm:text-[13px] uppercase tracking-wider text-on-surface font-semibold hover:text-primary hover:bg-surface-container-high/40 transition-all">Overview</a>
+        <a href="#taste-profile" class="nav-item px-3 py-1 rounded-full font-label-md text-xs sm:text-[13px] uppercase tracking-wider text-on-surface-variant hover:text-primary hover:bg-surface-container-high/40 transition-all">Taste Profile</a>
+        <a href="#formats" class="nav-item px-3 py-1 rounded-full font-label-md text-xs sm:text-[13px] uppercase tracking-wider text-on-surface-variant hover:text-primary hover:bg-surface-container-high/40 transition-all">Pack Formats</a>
+        <a href="#ritual" class="nav-item px-3 py-1 rounded-full font-label-md text-xs sm:text-[13px] uppercase tracking-wider text-on-surface-variant hover:text-primary hover:bg-surface-container-high/40 transition-all">The Ritual</a>
+        <a href="#nutrition" class="nav-item px-3 py-1 rounded-full font-label-md text-xs sm:text-[13px] uppercase tracking-wider text-on-surface-variant hover:text-primary hover:bg-surface-container-high/40 transition-all">Nutrition</a>
+        <a href="#locator" class="nav-item px-3 py-1 rounded-full font-label-md text-xs sm:text-[13px] uppercase tracking-wider text-on-surface-variant hover:text-primary hover:bg-surface-container-high/40 transition-all">Where to Buy</a>
+      </nav>
+
+      <!-- Action Button & Mobile Menu Toggle -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <a href="#locator" class="hidden sm:inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-xs sm:text-[13px] uppercase tracking-wider px-4 sm:px-5 py-2 rounded-full hover:bg-primary-container transition-all hover:scale-105 shadow-sm">
+          Find Nearby
+        </a>
+        <button id="mobileMenuToggle" aria-label="Toggle navigation menu" class="lg:hidden w-9 h-9 rounded-full bg-surface-container-high/60 text-on-surface flex items-center justify-center hover:bg-surface-container-highest transition-colors">
+          <span class="material-symbols-outlined text-xl" id="menuToggleIcon">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenuDropdown" class="hidden lg:hidden bg-surface/90 backdrop-blur-2xl border-b border-outline-variant/20 px-6 py-4 shadow-xl transition-all">
+      <nav class="flex flex-col gap-1.5">
+        <a href="#scrollWrapper" class="mobile-nav-link text-on-surface font-label-md text-xs uppercase tracking-wider py-2 border-b border-outline-variant/10">Overview</a>
+        <a href="#taste-profile" class="mobile-nav-link text-on-surface-variant font-label-md text-xs uppercase tracking-wider py-2 border-b border-outline-variant/10">Taste Profile</a>
+        <a href="#formats" class="mobile-nav-link text-on-surface-variant font-label-md text-xs uppercase tracking-wider py-2 border-b border-outline-variant/10">Pack Formats</a>
+        <a href="#ritual" class="mobile-nav-link text-on-surface-variant font-label-md text-xs uppercase tracking-wider py-2 border-b border-outline-variant/10">The Ritual</a>
+        <a href="#nutrition" class="mobile-nav-link text-on-surface-variant font-label-md text-xs uppercase tracking-wider py-2 border-b border-outline-variant/10">Nutrition</a>
+        <a href="#locator" class="mobile-nav-link text-on-surface-variant font-label-md text-xs uppercase tracking-wider py-2">Where to Buy</a>
+        <a href="#locator" class="mobile-nav-link mt-1.5 inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-xs uppercase tracking-wider px-5 py-2.5 rounded-full hover:bg-primary-container text-center">
+          Find Nearby
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN SCROLL CANVAS -->
+  <div class="scroll-animation-wrapper" id="scrollWrapper">
+    <div class="sticky-container">
+      <canvas id="heroCanvas"></canvas>
+
+      <!-- HERO HEADING & SUBHEADING (CENTERED ABOVE THE CAN, FADES AT 30% SCROLL) -->
+      <div id="heroOverlay" class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6 pb-24 sm:pb-32 md:pb-40 pointer-events-none">
+        <h1 class="font-headline-lg text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-tight text-black drop-shadow-[0_2px_12px_rgba(255,255,255,0.6)]">
+          Diet Coke
+        </h1>
+        <p class="font-body-lg text-base sm:text-xl md:text-2xl font-bold text-primary tracking-normal mt-2 sm:mt-3 max-w-xl drop-shadow-[0_1px_8px_rgba(255,255,255,0.5)]">
+          The original sparkling, sugar-free lift
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- REMAINING SECTIONS BELOW SCROLL ANIMATION -->
+  <main class="w-full bg-surface">
+    <div class="flex flex-col w-full">
+
+      <!-- QUICK STAT BADGES / HIGHLIGHTS BAR -->
+      <section class="w-full bg-surface-container-low py-12 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="flex items-start gap-4 p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:-translate-y-1 transition-transform">
+            <div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center flex-shrink-0 text-primary">
+              <span class="material-symbols-outlined text-2xl">no_food</span>
+            </div>
+            <div class="flex flex-col">
+              <h2 class="font-headline-sm text-headline-sm text-on-surface">0g Sugar</h2>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Iconic, bright cola sensation with zero added sugars.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:-translate-y-1 transition-transform">
+            <div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center flex-shrink-0 text-tertiary">
+              <span class="material-symbols-outlined text-2xl">bedtime</span>
+            </div>
+            <div class="flex flex-col">
+              <h2 class="font-headline-sm text-headline-sm text-on-surface">0mg Caffeine</h2>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Midnight snack, afternoon break — zero jitters or sleep disruption.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:-translate-y-1 transition-transform">
+            <div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center flex-shrink-0 text-primary">
+              <span class="material-symbols-outlined text-2xl">bubble_chart</span>
+            </div>
+            <div class="flex flex-col">
+              <h2 class="font-headline-sm text-headline-sm text-on-surface">100% Sparkle</h2>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Micro-bubbles tuned for that signature high-octane Diet Coke pop.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:-translate-y-1 transition-transform">
+            <div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center flex-shrink-0 text-tertiary">
+              <span class="material-symbols-outlined text-2xl">recycling</span>
+            </div>
+            <div class="flex flex-col">
+              <h2 class="font-headline-sm text-headline-sm text-on-surface">Infinite Loop</h2>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                330ml lightweight aluminum can, 100% infinitely recyclable.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TASTE & SENSORY PROFILE ("THE ANATOMY OF THE CHILL") -->
+      <section class="w-full px-6 lg:px-12 py-24 bg-surface" id="taste-profile">
+        <div class="max-w-7xl mx-auto flex flex-col gap-16">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <span class="font-label-md text-label-md uppercase tracking-widest text-primary font-bold">Sensory Architecture</span>
+              <h2 class="font-headline-lg text-headline-lg text-on-surface mt-2">The Anatomy of the Chill</h2>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+              A layered experience designed to satisfy instant thirst with zero caffeine interference. Engineered around crisp sensory benchmarks.
+            </p>
+          </div>
+          <!-- 3-Phase Progression -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="flex flex-col p-8 rounded-3xl bg-surface-container-low shadow-sm relative overflow-hidden group">
+              <div class="text-tertiary font-headline-lg text-headline-lg opacity-40 mb-4">01</div>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">The First Crack</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                A rush of compressed carbonation escapes the tab. The initial aroma hints at aromatic spice and balanced citrus undertones.
+              </p>
+              <div class="mt-auto flex items-center gap-2 text-primary font-label-md text-label-md uppercase tracking-wider">
+                <span>Acoustic Bite</span>
+                <span class="material-symbols-outlined text-lg">volume_up</span>
+              </div>
+            </div>
+            <div class="flex flex-col p-8 rounded-3xl bg-surface-container-low shadow-sm relative overflow-hidden group">
+              <div class="text-primary font-headline-lg text-headline-lg opacity-40 mb-4">02</div>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">The Effervescence</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                Vibrant, fine-point micro-bubbles coat the palate immediately, providing an electric tactile prickle before dissolving smoothly.
+              </p>
+              <div class="mt-auto flex items-center gap-2 text-primary font-label-md text-label-md uppercase tracking-wider">
+                <span>Micro-Bubble Density</span>
+                <span class="material-symbols-outlined text-lg">water_drop</span>
+              </div>
+            </div>
+            <div class="flex flex-col p-8 rounded-3xl bg-surface-container-low shadow-sm relative overflow-hidden group">
+              <div class="text-tertiary font-headline-lg text-headline-lg opacity-40 mb-4">03</div>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">The Clean Finish</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                No lingering heaviness or sugar residue. A sharp, pristine snap leaves your mouth clean, hydrated, and ready for another sip.
+              </p>
+              <div class="mt-auto flex items-center gap-2 text-primary font-label-md text-label-md uppercase tracking-wider">
+                <span>Zero Aftertaste</span>
+                <span class="material-symbols-outlined text-lg">verified</span>
+              </div>
+            </div>
+          </div>
+          <!-- Interactive Sensory Gauges Panel -->
+          <div class="p-8 md:p-12 rounded-3xl bg-surface-container shadow-md grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 flex flex-col">
+              <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Calibration Spec</span>
+              <h3 class="font-headline-md text-headline-md text-on-surface mt-1 mb-3">Flavor Balance Meter</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Balanced specifically to preserve Diet Coke's distinctive astringent bite without relying on the bitter kick of caffeine.
+              </p>
+            </div>
+            <div class="lg:col-span-7 flex flex-col gap-6">
+              <!-- Carbonation Scale -->
+              <div class="flex flex-col gap-2">
+                <div class="flex justify-between font-label-md text-label-md text-on-surface">
+                  <span>Carbonation Intensity</span>
+                  <span class="font-bold text-primary">9.4 / 10 (Ultra Crisp)</span>
+                </div>
+                <div class="w-full h-3 rounded-full bg-surface-container-highest overflow-hidden">
+                  <div class="h-full bg-primary rounded-full" style="width: 94%;"></div>
+                </div>
+              </div>
+              <!-- Sweetness Profile -->
+              <div class="flex flex-col gap-2">
+                <div class="flex justify-between font-label-md text-label-md text-on-surface">
+                  <span>Perceived Sweetness</span>
+                  <span class="font-bold text-tertiary">3.8 / 10 (Dry &amp; Refreshing)</span>
+                </div>
+                <div class="w-full h-3 rounded-full bg-surface-container-highest overflow-hidden">
+                  <div class="h-full bg-tertiary rounded-full" style="width: 38%;"></div>
+                </div>
+              </div>
+              <!-- Finish Clarity -->
+              <div class="flex flex-col gap-2">
+                <div class="flex justify-between font-label-md text-label-md text-on-surface">
+                  <span>Palate Cleansing Factor</span>
+                  <span class="font-bold text-on-surface">9.9 / 10 (Instant Snap)</span>
+                </div>
+                <div class="w-full h-3 rounded-full bg-surface-container-highest overflow-hidden">
+                  <div class="h-full bg-on-surface rounded-full" style="width: 99%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCT LINEUP & FORMATS -->
+      <section class="w-full px-6 lg:px-12 py-24 bg-surface-container-low" id="formats">
+        <div class="max-w-7xl mx-auto flex flex-col gap-12">
+          <div class="text-center max-w-2xl mx-auto flex flex-col items-center">
+            <span class="font-label-md text-label-md uppercase tracking-widest text-primary font-bold">Pack Formats</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mt-2">Tailored for Every Moment</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-3">
+              Whether you need a quick lunchtime chill, an evening unwind, or dinner party stock — find the right pack size.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Format 1: 330ml Can (Hero) -->
+            <div class="flex flex-col p-6 rounded-3xl bg-surface-container-lowest shadow-md hover:-translate-y-2 transition-transform duration-300 relative">
+              <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm uppercase">
+                Signature
+              </div>
+              <div class="h-56 flex items-center justify-center p-4">
+                <img alt="Diet Coke No Caffeine 330ml Can Classic" class="h-full object-contain drop-shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA43tb6AakdtxenuLxqUfssoo7yIg5Hn_ssdq71SQOnleAFmwpKIOdYQbP_FLIde9KUehc7pLGbrQ88cjO-0XuRu1uqQ_mt8FyMtzqB-yTVxLkuHsT3LUXaYlePfFbvFVPlsDtBClrxn2nVqkQS89C3gaan-K0_a_q5HGqIXEzqpP4pFM-8-YxXjlixH4slGNSg6cR1S5msNG0sD0YllKyJ2WGABH9KKcDwSSja1v98a88B5SkFFzTUcNsRiU-sxU7ltA"/>
+              </div>
+              <div class="flex flex-col mt-4">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface">330ml Classic Can</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-4">
+                  Single-serve perfection. Chills fast in the freezer, stays effervescent to the last sip.
+                </p>
+                <div class="flex items-center justify-between pt-4 mt-auto">
+                  <span class="font-label-md text-label-md text-primary uppercase font-bold">Single / 6-Pack</span>
+                  <span class="material-symbols-outlined text-primary">arrow_forward</span>
+                </div>
+              </div>
+            </div>
+            <!-- Format 2: 500ml Bottle -->
+            <div class="flex flex-col p-6 rounded-3xl bg-surface-container-lowest shadow-md hover:-translate-y-2 transition-transform duration-300">
+              <div class="h-56 flex items-center justify-center p-4">
+                <img class="h-full object-contain rounded-xl" data-alt="Editorial bottle photography of Diet Coke Caffeine Free 500ml on-the-go contoured bottle resting on an architectural brushed stone slab with condensation droplets, bathed in morning sunlight, champagne and soft crimson tones, ultra-crisp studio product photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVeNalaWV3XRpydhStjWvcXwypNEE9I8_gS0oKYPLV-ycSPkBJ9WzZg6KTdz8M3DED1a5W7kA_Eclbd73ekjZOShdeqLjovD2q9L1-XYrXkyK62f0ceBvU67ME_GSdoWHHwcRcrWAR5QlUR18CUK44TYGR7S48Dy3-DGymcoXjuoQE6FchqEewQTTAcIUPRSmsp2-mrP2foA4z9rrzRbIAYZTL2hHKO0F-s7OcnGgyLyKg49nO3_oY"/>
+              </div>
+              <div class="flex flex-col mt-4">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface">500ml Chilled Bottle</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-4">
+                  Resealable convenience designed for commutes, road trips, and afternoon hydration.
+                </p>
+                <div class="flex items-center justify-between pt-4 mt-auto">
+                  <span class="font-label-md text-label-md text-on-surface uppercase font-bold">On-the-Go</span>
+                  <span class="material-symbols-outlined text-on-surface-variant">arrow_forward</span>
+                </div>
+              </div>
+            </div>
+            <!-- Format 3: 8-Pack Fridge Pack -->
+            <div class="flex flex-col p-6 rounded-3xl bg-surface-container-lowest shadow-md hover:-translate-y-2 transition-transform duration-300">
+              <div class="h-56 flex items-center justify-center p-4">
+                <img class="h-full object-contain rounded-xl" data-alt="Product packaging design of Diet Coke Caffeine Free 8-can fridge pack carton box, sleek champagne gold design with iconic Diet Coke red script, resting beside an open minimalist refrigerator with soft ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2QG7MmVhyOOp3a3TWVsOVWcuIIbussPJGChvKw487HtC4dUwkmlPMsEcd_syYfBC0pnp0_nV-5_yyLp0fCVVQYMI5ECieyE1FRGHEVWEgznzIRHgAp3PWi7aJE6Ggn_jEdnHI_AVUI2l7ZsOLdgEb5U1gr4ktLaISIYicQTQlip_x4QHqm6mkRSt8izuRvXoIfcrsMqxN6JVpzFZZZtDBjGZl7Glp9KCVU1TsnK3Z57Z8LmKriJbM"/>
+              </div>
+              <div class="flex flex-col mt-4">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface">8-Pack Fridge Dispenser</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-4">
+                  Slim-line cardboard dispenser for easy gravity-fed stacking in standard refrigerator doors.
+                </p>
+                <div class="flex items-center justify-between pt-4 mt-auto">
+                  <span class="font-label-md text-label-md text-on-surface uppercase font-bold">Fridge Ready</span>
+                  <span class="material-symbols-outlined text-on-surface-variant">arrow_forward</span>
+                </div>
+              </div>
+            </div>
+            <!-- Format 4: 2L Bottle -->
+            <div class="flex flex-col p-6 rounded-3xl bg-surface-container-lowest shadow-md hover:-translate-y-2 transition-transform duration-300">
+              <div class="h-56 flex items-center justify-center p-4">
+                <img class="h-full object-contain rounded-xl" data-alt="A clean product shot of a 2 Litre Diet Coke Caffeine Free sharing bottle, glistening with icy droplets on a pristine beige pedestal against a diffused studio background, minimalist commercial beverage campaign style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAauOmFv_RuUCs_gg81clod4R-0VYmJMcMKvvy6qtG38TYMAaAF1GtSiBaC1OJ-WGt0FthdMYDQibSJ76H5UIyyVudtOJrFZykWH2gHi-B-1UGP--LgWJ2f3CJ07HtQOupDjmgx2o-V6vJJ_hfuy3mNY8nC3cg-Uzp6-zPzNa4vAhryIehD7sYFz0MwfuUJWfl0Y1YKAd4M-m9SIf9RnHuMNPIUJMYv57XVsGZEdlq3w4LY4HQ8Kv2C"/>
+              </div>
+              <div class="flex flex-col mt-4">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface">2L Sharing Size</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-4">
+                  Large gatherings, family dinners, and movie nights. Ample crisp cola for the whole crew.
+                </p>
+                <div class="flex items-center justify-between pt-4 mt-auto">
+                  <span class="font-label-md text-label-md text-on-surface uppercase font-bold">Party / Share</span>
+                  <span class="material-symbols-outlined text-on-surface-variant">arrow_forward</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- THE PERFECT SERVE / RITUAL -->
+      <section class="w-full px-6 lg:px-12 py-24 bg-surface" id="ritual">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 flex flex-col">
+            <span class="font-label-md text-label-md uppercase tracking-widest text-primary font-bold">The Golden Ritual</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 mb-6">How to Serve at Peak Elevation</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+              Temperature and glassware alter effervescence dynamics. Follow the Coca-Cola master standard for supreme cold satisfaction.
+            </p>
+            <!-- Step List -->
+            <div class="flex flex-col gap-6">
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-surface-container-low">
+                <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold flex-shrink-0">
+                  1
+                </div>
+                <div>
+                  <h4 class="font-headline-sm text-headline-sm text-on-surface">Target 3°C (37°F)</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Chill the 330ml can thoroughly for at least 3 hours. True crispness unlocks just above freezing.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-surface-container-low">
+                <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold flex-shrink-0">
+                  2
+                </div>
+                <div>
+                  <h4 class="font-headline-sm text-headline-sm text-on-surface">Heavy Cubed Ice</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Fill a highball glass to the brim with dense, crystal-clear cubes. Avoid crushed ice to prevent premature dilution.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-surface-container-low">
+                <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold flex-shrink-0">
+                  3
+                </div>
+                <div>
+                  <h4 class="font-headline-sm text-headline-sm text-on-surface">The 45° Gliding Pour</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Tilt the glass and pour along the interior curve. Finish with an optional razor-thin slice of fresh lemon or lime.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Atmospheric Serve Photo Card -->
+          <div class="lg:col-span-6 relative">
+            <div class="p-4 rounded-3xl bg-surface-container shadow-xl">
+              <img class="w-full h-[460px] object-cover rounded-2xl" data-alt="Editorial close-up photograph of sparkling Diet Coke poured into a tall frosted crystal highball glass over solid clear ice cubes, fine effervescent bubbles rising, fresh sliced lime wedge resting on the rim, golden afternoon studio light, high-fashion food styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0JcKgBRnAmA2gebqCZfOw1aN-tXzCLtwbfmQ84WfM8-AR0OaJJUjKIJ2cHY1pbe4PwMLmHOymlVsOPplpGPq8ZdTKbSifkk6rD9KN-r9uqNsDA4tOfdcYSFc5RrFGKqtR1ba9LAlrfLdd-609VLbDkH159HwDMuM5Rq3nu8WVtuOmGHhOtTcEFg76RPY-oVPi63LQXrd4OqEwoEkAWoXUwjh6c-wokHj3hVqBdJEPhtRLr-cgMj25"/>
+            </div>
+            <div class="absolute -bottom-6 -left-6 hidden sm:flex items-center gap-4 p-5 rounded-2xl bg-surface-container-lowest shadow-xl">
+              <span class="material-symbols-outlined text-3xl text-tertiary">thermostat</span>
+              <div>
+                <span class="font-label-xs uppercase font-bold tracking-widest text-on-surface-variant">Ideal Range</span>
+                <p class="font-headline-sm text-headline-sm text-on-surface">3°C – 4°C</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NUTRITION & INGREDIENTS TRANSPARENCY -->
+      <section class="w-full px-6 lg:px-12 py-24 bg-surface-container-low" id="nutrition">
+        <div class="max-w-7xl mx-auto flex flex-col gap-12">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <span class="font-label-md text-label-md uppercase tracking-widest text-primary font-bold">Label Honesty</span>
+              <h2 class="font-headline-lg text-headline-lg text-on-surface mt-2">Nutritional Transparency</h2>
+            </div>
+            <span class="font-label-md text-label-md uppercase text-on-surface-variant">Per 330ml Can Serving</span>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Nutrition Values Table -->
+            <div class="lg:col-span-6 p-8 rounded-3xl bg-surface-container-lowest shadow-md flex flex-col justify-between">
+              <div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-6">Typical Values</h3>
+                <div class="flex flex-col gap-3">
+                  <div class="flex justify-between py-2.5 font-body-md text-body-md text-on-surface">
+                    <span>Energy</span>
+                    <span class="font-bold">4 kJ / 1 kcal</span>
+                  </div>
+                  <div class="flex justify-between py-2.5 font-body-md text-body-md text-on-surface">
+                    <span>Fat</span>
+                    <span class="font-bold">0 g</span>
+                  </div>
+                  <div class="flex justify-between py-2.5 font-body-md text-body-md text-on-surface pl-4">
+                    <span class="text-on-surface-variant">• of which saturates</span>
+                    <span class="font-bold">0 g</span>
+                  </div>
+                  <div class="flex justify-between py-2.5 font-body-md text-body-md text-on-surface">
+                    <span>Carbohydrate</span>
+                    <span class="font-bold">0 g</span>
+                  </div>
+                  <div class="flex justify-between py-2.5 font-body-md text-body-md text-on-surface pl-4">
+                    <span class="text-on-surface-variant">• of which sugars</span>
+                    <span class="font-bold">0 g</span>
+                  </div>
+                  <div class="flex justify-between py-2.5 font-body-md text-body-md text-on-surface">
+                    <span>Protein</span>
+                    <span class="font-bold">0 g</span>
+                  </div>
+                  <div class="flex justify-between py-2.5 font-body-md text-body-md text-on-surface">
+                    <span>Salt</span>
+                    <span class="font-bold">0.05 g</span>
+                  </div>
+                  <div class="flex justify-between py-2.5 font-body-md text-body-md text-primary font-bold">
+                    <span>Caffeine</span>
+                    <span>0.00 mg</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8 p-4 rounded-xl bg-surface-container-low font-body-sm text-xs text-on-surface-variant">
+                Contains a source of Phenylalanine. Reference intake of an average adult (8400 kJ / 2000 kcal).
+              </div>
+            </div>
+            <!-- Ingredient Breakdown Cards -->
+            <div class="lg:col-span-6 flex flex-col gap-4">
+              <div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary text-2xl mt-1">water</span>
+                <div>
+                  <h4 class="font-label-lg text-label-lg uppercase text-on-surface">Carbonated Purified Water</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Triple-filtered artesian water pressurized to deliver crisp, tiny bubbles and clean mouthfeel.
+                  </p>
+                </div>
+              </div>
+              <div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex items-start gap-4">
+                <span class="material-symbols-outlined text-tertiary text-2xl mt-1">palette</span>
+                <div>
+                  <h4 class="font-label-lg text-label-lg uppercase text-on-surface">Caramel Colour (E150d)</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Provides that deep, familiar amber-mahogany hue synonymous with iconic cola.
+                  </p>
+                </div>
+              </div>
+              <div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary text-2xl mt-1">spa</span>
+                <div>
+                  <h4 class="font-label-lg text-label-lg uppercase text-on-surface">Sweeteners (Aspartame &amp; Acesulfame-K)</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    A calibrated pairing that mirrors the sweetness curve of sugar with practically zero calories.
+                  </p>
+                </div>
+              </div>
+              <div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex items-start gap-4">
+                <span class="material-symbols-outlined text-on-surface text-2xl mt-1">science</span>
+                <div>
+                  <h4 class="font-label-lg text-label-lg uppercase text-on-surface">Phosphoric &amp; Citric Acid + Natural Flavours</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    The Coca-Cola proprietary botanical blend delivering signature tang and tart finish.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STORE LOCATOR & STOCKIST SECTION -->
+      <section class="w-full px-6 lg:px-12 py-24 bg-surface" id="locator">
+        <div class="max-w-7xl mx-auto flex flex-col gap-12">
+          <div class="p-8 md:p-14 rounded-3xl bg-surface-container shadow-xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              <div class="lg:col-span-6 flex flex-col">
+                <span class="font-label-md text-label-md uppercase tracking-widest text-primary font-bold">Availability Radar</span>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 mb-4">Stock Your Fridge Today</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                  Available at nationwide grocers, convenience outposts, and on-demand delivery apps. Enter your zip code to inspect current aisle stock.
+                </p>
+                <!-- Search Form -->
+                <form class="flex flex-col sm:flex-row gap-3 max-w-lg mb-4" onsubmit="event.preventDefault(); document.getElementById('search-feedback').classList.remove('hidden');">
+                  <input class="flex-1 px-6 py-4 rounded-full bg-surface-container-lowest text-on-surface font-body-md placeholder-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="Enter Zip / Postal Code" required="" type="text"/>
+                  <button class="px-8 py-4 rounded-full bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-wider hover:bg-primary-container transition-transform hover:scale-105 shadow-md flex items-center justify-center gap-2" type="submit">
+                    <span>Locate</span>
+                    <span class="material-symbols-outlined text-lg">search</span>
+                  </button>
+                </form>
+                <div class="hidden p-3 rounded-xl bg-surface-container-high text-on-surface font-body-sm text-sm" id="search-feedback">
+                  <span class="font-bold text-primary">In Stock!</span> 14 retailers found within 3 miles with 330ml cans available.
+                </div>
+              </div>
+              <!-- Interactive Map Preview Card -->
+              <div class="lg:col-span-6">
+                <div class="w-full h-80 rounded-2xl bg-cover bg-center shadow-md relative overflow-hidden flex items-end p-6" data-location="New York, NY" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDcL_VOHeSb1NTW1u3PRSNh3U-TP1AA_OUx9gMxiTW0dtnOuTeb2IuRpbJYleMiYAOLTMCDI7DhC9ulRkg4wysQ6JTTV0KJXkj_me73fWQwqMrD1IE7MWQe8QMT-mu6m3JaU-BHRySb56wsSUUzXc245n_X1JPjPAuGWG3ITrE2OW7vVJoqYo7bGzsQ8EiZ-LKBbQmPsm2oaGeHdbEtVMC7Nuk1jmcgOVOU9662L5i1wvr2jgtHOrSh');">
+                  <div class="px-5 py-3 rounded-2xl bg-surface-container-lowest/90 backdrop-blur-md shadow-lg flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-2xl">store</span>
+                    <div>
+                      <p class="font-label-md text-label-md text-on-surface">Target, Whole Foods, Kroger &amp; more</p>
+                      <p class="font-body-sm text-xs text-on-surface-variant">Cold display cans restocked daily</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Delivery Partner Badges -->
+            <div class="mt-12 pt-8 flex flex-wrap items-center justify-between gap-6">
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Instant 30-Min Delivery Available On</span>
+              <div class="flex flex-wrap items-center gap-4">
+                <div class="px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md uppercase shadow-sm">
+                  DoorDash
+                </div>
+                <div class="px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md uppercase shadow-sm">
+                  Instacart
+                </div>
+                <div class="px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md uppercase shadow-sm">
+                  Amazon Fresh
+                </div>
+                <div class="px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md uppercase shadow-sm">
+                  UberEats
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEWSLETTER / TASTE CLUB SIGN-UP -->
+      <section class="w-full px-6 lg:px-12 py-20 bg-surface-container-high">
+        <div class="max-w-4xl mx-auto flex flex-col items-center text-center">
+          <div class="w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center mb-6 shadow-md">
+            <span class="material-symbols-outlined text-3xl">mail</span>
+          </div>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface mb-3">
+            Stay Refreshed. Join the Diet Coke Insider Club.
+          </h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-8">
+            Be the first to unlock limited-edition can drops, seasonal flavors, tasting room invites, and zero-caffeine lifestyle curation.
+          </p>
+          <form class="flex flex-col sm:flex-row gap-3 w-full max-w-md" onsubmit="event.preventDefault(); document.getElementById('newsletter-success').classList.remove('hidden'); this.classList.add('hidden');">
+            <input class="flex-1 px-6 py-4 rounded-full bg-surface-container-lowest text-on-surface font-body-md placeholder-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="your.email@example.com" required="" type="email"/>
+            <button class="px-8 py-4 rounded-full bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-wider hover:bg-primary-container transition-transform hover:scale-105 shadow-md flex-shrink-0" type="submit">
+              Subscribe
+            </button>
+          </form>
+          <div class="hidden p-4 rounded-2xl bg-surface-container-lowest text-on-surface font-body-md text-center max-w-md shadow-sm" id="newsletter-success">
+            <span class="material-symbols-outlined text-primary text-2xl align-middle mr-1">check_circle</span>
+            Welcome to the club. Check your inbox for your exclusive welcome gift.
+          </div>
+          <p class="font-body-sm text-xs text-on-surface-variant mt-4">
+            We respect your inbox. Unsubscribe anytime with one tap. Zero spam guaranteed.
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-space-xl flex flex-col gap-space-lg">
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg pb-space-lg">
+        <div class="flex flex-col gap-space-xs max-w-md">
+          <div class="flex items-center gap-space-sm">
+            <img alt="Diet Coke Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU0qMBmkjrK4J5VKg1zdiWp7h1VsJwnIKOPijP2Oi_EzNhVhqg1-9qsawWnFEiP2HtCtBoWiDydXlxqVfOui3yMzeKtyFJTXlL4mQXUS4FLqtfWxL2zDn33tXCXc2xSCxw8_u16CCLPerFdVDNJouyqzm5xd-121GKcfoQt69LStbClhAVnFR_k7FMOXbXNjtY6tK3tlQQ4brRsqXKPEw4gbVFmPhWdhsPr1skFxPcde8f4TegObKw"/>
+            <span class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase">Diet Coke</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">The iconic taste and crisp refreshment of Diet Coke, completely caffeine-free. 100% extraordinary refreshment, 0% caffeine.</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-space-md">
+          <div class="inline-flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container rounded-full">
+            <span class="material-symbols-outlined text-primary text-[18px]">recycling</span>
+            <span class="font-label-sm text-label-sm uppercase text-on-surface">100% Recyclable Can &amp; Bottle</span>
+          </div>
+          <div class="inline-flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container rounded-full">
+            <span class="material-symbols-outlined text-tertiary text-[18px]">spa</span>
+            <span class="font-label-sm text-label-sm uppercase text-on-surface">Zero Sugar &amp; Calories</span>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-space-lg">
+        <div class="flex flex-col gap-space-xs">
+          <span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold">The Collection</span>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="overview" href="#">Overview</a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="taste-profile" href="#taste-profile">Crisp Flavor Profile</a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="the-ritual" href="#">Serve &amp; Ritual</a>
+        </div>
+        <div class="flex flex-col gap-space-xs">
+          <span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold">Transparency</span>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="nutrition-ingredients" href="#">Nutritional Breakdown</a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="nutrition-ingredients" href="#">Allergen &amp; Phenylalanine Info</a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="nutrition-ingredients" href="#">Water &amp; Sourcing Stewardship</a>
+        </div>
+        <div class="flex flex-col gap-space-xs">
+          <span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold">Locate &amp; Order</span>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="where-to-buy" href="#locator">Grocery &amp; Retail Partners</a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="where-to-buy" href="#locator">Order Online Delivery</a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="where-to-buy" href="#locator">Restaurant Fountain Locator</a>
+        </div>
+        <div class="flex flex-col gap-space-xs">
+          <span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold">Community</span>
+          <div class="flex items-center gap-space-sm pt-space-xs">
+            <a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">tag</span></a>
+            <a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">play_circle</span></a>
+            <a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">chat_bubble</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-md">
+        <span class="font-body-sm text-body-sm text-on-surface-variant">© 2024 The Coca-Cola Company. Diet Coke® is a registered trademark of The Coca-Cola Company. All Rights Reserved.</span>
+        <div class="flex items-center gap-space-md">
+          <a class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+          <a class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" href="#">Terms of Use</a>
+          <a class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" href="#">Do Not Sell My Info</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

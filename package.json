@@ -1,0 +1,18 @@
+{
+  "name": "diet-coke",
+  "version": "1.0.0",
+  "description": "Diet Coke Caffeine Free — Interactive Canvas Scroll Showcase",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "diet-coke",
+    "caffeine-free",
+    "scroll-animation",
+    "canvas",
+    "tailwind"
+  ],
+  "author": "Ajit Auti",
+  "license": "MIT"
+}
